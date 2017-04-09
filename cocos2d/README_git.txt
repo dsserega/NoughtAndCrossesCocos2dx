@@ -1,0 +1,1 @@
+Copy here cocos2dx 3.14 files to compile sources
