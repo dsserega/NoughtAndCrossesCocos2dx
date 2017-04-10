@@ -101,6 +101,8 @@ void NoughtsAndCrossesScene::initField()
         {{-1.5f, 0.5f}, {1.5f, 0.5f}},
     };
     
+    constexpr float gridWidth = 10.0f;
+    
     for(const auto& lineRel : linesRelCoords)
     {
         Rect rect;
@@ -113,8 +115,8 @@ void NoughtsAndCrossesScene::initField()
         auto lineSprite = cocos2d::ui::Scale9Sprite::create("res/grid.png");
         lineSprite->setPosition(pos);
         lineSprite->setContentSize(Size(
-            (lineRel.second.x - lineRel.first.x) * kCellSize + 5 * 2,
-            (lineRel.second.y - lineRel.first.y) * kCellSize + 5 * 2
+            (lineRel.second.x - lineRel.first.x) * kCellSize + gridWidth,
+            (lineRel.second.y - lineRel.first.y) * kCellSize + gridWidth
         ));
         
         lineSprite->setAnchorPoint(Vec2::ZERO);
